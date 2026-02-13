@@ -170,7 +170,6 @@ body {
   width:       100%;
   aspect-ratio: 3/4;
   object-fit:  cover;
-  filter:      grayscale(30%) contrast(110%);
 }
 
 .about-text h2 {
