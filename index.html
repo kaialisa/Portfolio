@@ -25,7 +25,10 @@
 
   <link rel="icon" type="image/png" href="/img/favicon.png">
   <meta name="theme-color" content="#000000">
-
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="preload" href="fonts/bebas-neue.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/courier-prime-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/vt323.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
 
   <script type="application/ld+json">
@@ -102,8 +105,8 @@
 
   <!-- Data + Scripts -->
   <!-- projects.js must come before scripts.js -->
-  <script src="js/projects.js"></script>
-  <script src="js/scripts.js"></script>
+  <script src="js/projects.js" defer></script>
+  <script src="js/scripts.js" defer></script>
 
 </body>
 </html>
