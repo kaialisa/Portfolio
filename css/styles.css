@@ -576,6 +576,7 @@ body {
   .portfolio-grid { padding: 2px; gap: 2px; }
   .modal-body     { grid-template-columns: 1fr; }
   .modal-box      { margin-top: 20px; }
+    .grid-item img { filter: grayscale(0%); }
 }
 
 /* ── SCROLLBAR ── */
