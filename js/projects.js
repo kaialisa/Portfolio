@@ -261,7 +261,7 @@ const projects = [
     link: "",
     role: "Producer",
     desc: "Interview series documenting the inaugural conference of the MA program Gender, Intersectionality and Politics on behalf of the Gender and Diversity Division of Freie Universität Berlin, featuring keynote speakers Dr. Akwugo Emejulu and Dr. Sirma Bilge.",
-    grid: "normal",
+    grid: "wide",
     hover: "warm",
     logo: true,
   },

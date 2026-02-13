@@ -530,7 +530,7 @@ body {
   :root { --cols: 2; }
   .grid-item.wide { grid-column: span 2; }
   .about-panel    { grid-template-columns: 1fr; }
-  .about-img      { aspect-ratio: 4/3; max-width: 200px; }
+  .about-img      { aspect-ratio: 4/3; max-width: 100%; object-position: center 40%; }
   .filter-btn     { padding: 10px 14px; font-size: 0.62rem; }
   .site-header    { padding: 16px 16px 10px; }
   .portfolio-grid { padding: 2px; gap: 2px; }
