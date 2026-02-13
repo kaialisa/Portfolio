@@ -5,10 +5,11 @@ const path = require('path');
 const imgDir = './img';
 const maxWidth = 1920;
 
-const files = fs.readdirSync(imgDir).filter(f =>
-  /\.(jpg|jpeg|png|webp)$/i.test(f)
-);
-
+const files = fs.readdirSync(imgDir).filter(f => {
+  if (!/\.(jpg|jpeg|png)$/i.test(f)) return false; // only process jpg/png
+  const webpVersion = path.join(imgDir, path.parse(f).name + '.webp');
+  return !fs.existsSync(webpVersion); // skip if webp already exists
+});
 console.log(`Found ${files.length} images to process...`);
 
 Promise.all(files.map(async file => {
