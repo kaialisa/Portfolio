@@ -59,10 +59,10 @@ function buildGrid() {
 
   projects.forEach((p, i) => {
     const cats   = p.categories.join(' ');
-    const hover  = p.hover ? `hover-${p.hover}` : 'hover-warm'; // default to warm if not specified
-    const logo   = p.logo ? 'logo' : '';
+    const hover  = p.hover ? `hover-${p.hover}` : 'hover-warm';
+    const textCard = p.textCard ? 'text-card' : '';  // ← ADD THIS LINE
     const item   = document.createElement('div');
-    item.className = `grid-item ${p.grid} ${cats} ${hover} ${logo}`;
+    item.className = `grid-item ${p.grid} ${cats} ${hover} ${textCard}`;  // ← ADD ${textCard}
     item.dataset.index = i;
 
     item.innerHTML = `

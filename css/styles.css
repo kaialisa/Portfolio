@@ -249,8 +249,10 @@ body {
   pointer-events: none;
 }
 
-.grid-item.hidden { display: none; }
-
+.grid-item.hidden,
+.grid-item.text-card.hidden {
+  display: none !important;
+}
 .grid-item.pop-in {
   animation: pop-in 0.22s ease-out forwards;
 }
@@ -262,6 +264,61 @@ body {
   object-fit: cover;
   filter:     grayscale(15%);
   transition: filter 0.3s, transform 0.4s;
+}
+
+/* ── TEXT CARDS ── */
+.grid-item.text-card {
+  background: var(--bg);
+  border: 3px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+}
+
+.grid-item.text-card img {
+  display: none;
+}
+
+.grid-item.text-card .item-overlay {
+  position: static;
+  background: none;
+  opacity: 1;
+  padding: 0;
+}
+
+.grid-item.text-card .item-title {
+  font-family: 'VT323', monospace;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.grid-item.text-card .item-meta {
+  font-size: 0.85rem;
+  color: var(--red);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'VT323', monospace;
+}
+
+.grid-item.text-card .item-role {
+  display: none;
+}
+
+.grid-item.text-card:hover {
+  background: var(--ink);
+}
+
+.grid-item.text-card:hover .item-title {
+  color: #00ff00;
+}
+
+.grid-item.text-card:hover .item-meta {
+  color: #00ff00;
 }
 
 /* wild hover states - controlled via hover class */
@@ -462,7 +519,7 @@ body {
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   :root { --cols: 2; }
-  .grid-item.tall { grid-row: span 1; aspect-ratio: 1; }
+ 
 }
 
 @media (max-width: 560px) {
