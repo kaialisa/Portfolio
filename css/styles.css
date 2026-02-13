@@ -402,6 +402,10 @@ body {
   position:   relative;
 }
 
+.modal-box.digital-modal {
+  max-width: 800px;
+}
+
 .modal-img {
   width:      100%;
   max-height: 75vh;

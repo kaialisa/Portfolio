@@ -1,6 +1,5 @@
 /* ============================================================
    KAIA LISA - scripts.js
-   No dependencies. Reads from projects.js.
    ============================================================ */
 
 /* ── CONFIG ── */
@@ -148,6 +147,17 @@ function initModal() {
 
     const i = parseInt(item.dataset.index);
     const p = projects[i];
+
+    const modalBox = document.querySelector('.modal-box');
+
+    // Add or remove digital-modal class based on project type
+    if (p.categories.includes('digital')) { 
+    modalBox.classList.add('digital-modal');
+  } else {
+    modalBox.classList.remove('digital-modal');
+  }
+
+  document.getElementById('modalImg').src = p.img;
 
     document.getElementById('modalImg').src          = p.img;
     document.getElementById('modalImg').alt          = p.title;
