@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kaia Lisa — Berlin-based multimedia producer. Cinematography, documentary film, web development, sociocultural research.">
+
+  <title>KAIA LISA</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=VT323&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="/" class="site-name">KAIA LISA</a>
+    <button class="about-btn" id="aboutToggle">About</button>
+  </header>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <span class="ticker" id="ticker"></span>
+  </div>
+
+  <!-- ABOUT PANEL -->
+  <div class="about-panel" id="aboutPanel"></div>
+
+  <!-- FILTER BAR -->
+  <nav class="filter-bar" aria-label="Filter projects">
+    <button class="filter-btn active" data-filter="all">All Work</button>
+    <button class="filter-btn" data-filter="video">Video</button>
+    <button class="filter-btn" data-filter="digital">Digital</button>
+    <button class="filter-btn" data-filter="research">Research</button>
+  </nav>
+
+  <!-- PORTFOLIO GRID - populated by scripts.js -->
+  <main class="portfolio-grid" id="grid"></main>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Close">[×]</button>
+      <img src="" alt="" class="modal-img" id="modalImg">
+      <div class="modal-body">
+        <div>
+          <div class="modal-category" id="modalCategory"></div>
+          <div class="modal-title"    id="modalTitle"></div>
+          <div class="modal-role"     id="modalRole"></div>
+          <p   class="modal-desc"     id="modalDesc"></p>
+        </div>
+        <div>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="modal-action" id="modalWatch" style="display:none">▶ Watch</a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="modal-action" id="modalLink"  style="display:none">→ View</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span>© 2026 Kaia Lisa</span>
+    <a href="legal-notice.html">Legal Notice</a>
+  </footer>
+
+  <!-- STATUS BAR -->
+  <div class="status-bar" id="statusBar" aria-hidden="true"></div>
+
+  <!-- Data + Scripts -->
+  <!-- projects.js must come before scripts.js -->
+  <script src="js/projects.js"></script>
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>
