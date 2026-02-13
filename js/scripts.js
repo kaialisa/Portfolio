@@ -213,11 +213,9 @@ function initStatusBar() {
 }
 
   /* ============================================================
-   MOBILE PIXEL TRAIL
+   PIXEL TRAIL
    ============================================================ */
-function initPixelTrail() {
-  // only run on mobile
-  if (window.innerWidth > 560) return;
+  function initPixelTrail() {
   
   const colors = ['#cc2200', '#00ff00', '#ff00ff', '#00ffff', '#ffff00'];
   let isDrawing = false;
