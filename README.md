@@ -1,3 +1,6 @@
+## Kaia Lisa Portfolio
+A dependency-free static portfolio site built with plain HTML, CSS, and JavaScript.
+
 ## Project Structure
 
 ```
@@ -6,7 +9,7 @@ kaialisa-2026/
   css/
     styles.css        # All styling
   js/
-    projects.js       # Your project data (EDIT THIS to add/remove projects)
+    projects.js       # Project data (add/remove projects here)
     scripts.js        # Site functionality
   img/                # Images (WebP format)
   optimize-images.js  # Script to convert new images to WebP
@@ -18,17 +21,18 @@ Open `js/projects.js` and add a new object at the **top** of the `projects` arra
 
 ```javascript
 {
-  title: "My New Project",
+  title: "Project",
   categories: ["video"], // or ["digital"] or ["research"] or mix
-  img: "img/my-image.webp",
-  type: "Video",
-  year: "2026",
+  img: "img/image.webp", 
+  type: "Video", 
+  year: "2026", 
   video: "https://youtube.com/watch?v=...", // optional
-  link: "https://example.com",              // optional
-  role: "Director",
-  desc: "Project description here.",
+  link: "https://example.com", // optional      
+  role: "Director", // optional
+  desc: "Project description here.", // optional
   grid: "normal",  // or "wide" or "tall"
   hover: "warm",   // see hover effects below
+  logo: false; // optional, set true for logo images (thumbnail uses contain instead of cover to avoid cropping)
 },
 ```
 
