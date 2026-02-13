@@ -20,9 +20,11 @@ function initTicker() {
   const visitorNum = String(Math.floor(Math.random() * 900000) + 100000);
   const phrases = [
     'UNDER CONSTRUCTION',
+    'WELCOME TO MY HOMEPAGE',
     `YOU ARE VISITOR NO. ${visitorNum}`,
     'OPTIMIZED FOR INTERNET EXPLORER',
     `LAST UPDATED: ${LAST_UPDATED}`,
+    'THANKS FOR VISITING',
   ];
   const sep     = ' &nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp; ';
   const segment = phrases.join(sep) + sep;
