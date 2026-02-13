@@ -107,6 +107,31 @@ body {
   border-bottom-color: var(--red);
 }
 
+.contact-btn{
+  padding: 0.5rem 2rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color:
+    color-mix(in srgb, var(--red) 35%, #fff 65%)
+    color-mix(in srgb, var(--red) 70%, #000 30%)
+    color-mix(in srgb, var(--red) 70%, #000 30%)
+    color-mix(in srgb, var(--red) 35%, #fff 65%);
+  border-radius: 0px;
+  background-color: color-mix(in srgb, var(--red) 55%, #fff 45%);
+  box-shadow:
+    -2px 0 4px -1px rgba(0,0,0,0.2),
+    inset -2px -2px 1px 0 color-mix(in srgb, var(--red) 70%, #000 30%);
+  -webkit-transition: all 100ms linear;
+  transition: all 100ms linear;
+  color: color-mix(in srgb, var(--red) 55%, #5b005b 45%);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contact-btn:hover{
+  background-color: color-mix(in srgb, var(--red) 65%, #fff 35%);
+}
+
 /* ── TICKER ── */
 .ticker-wrap {
   overflow:    hidden;
