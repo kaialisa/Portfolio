@@ -324,10 +324,10 @@ body {
 /* wild hover states - controlled via hover class */
 .grid-item.hover-warm:hover img      { filter: grayscale(0%) sepia(30%) contrast(110%);        transform: scale(1.08); }
 .grid-item.hover-cold:hover img      { filter: grayscale(0%) hue-rotate(180deg) saturate(130%); transform: scale(1.05) rotate(1.5deg); }
-.grid-item.hover-harsh:hover img     { filter: grayscale(0%) contrast(145%) brightness(92%);    transform: scale(1.11); }
-.grid-item.hover-vivid:hover img     { filter: grayscale(0%) saturate(170%) brightness(105%);   transform: scale(1.04) rotate(-1.2deg); }
-.grid-item.hover-grayscale:hover img { filter: grayscale(80%) contrast(160%);                   transform: scale(1.13); }
-.grid-item.hover-drift:hover img     { filter: grayscale(0%) saturate(180%) hue-rotate(15deg);  transform: scale(1.06) translateY(-5px); }
+.grid-item.hover-harsh:hover img     { filter: contrast(135%) brightness(96%); transform: scale(1.11); }
+.grid-item.hover-vivid:hover img     { filter: saturate(140%) brightness(104%) contrast(108%); transform: scale(1.04) rotate(-1.2deg); }
+.grid-item.hover-grayscale:hover img { filter: grayscale(85%) contrast(135%) brightness(103%); transform: scale(1.13); }
+.grid-item.hover-drift:hover img     { filter: saturate(145%) hue-rotate(12deg) contrast(110%); transform: scale(1.06) translateY(-5px); }
 .grid-item.hover-invert:hover img    { filter: grayscale(0%) invert(8%) contrast(125%);         transform: scale(1.07) rotate(0.8deg); }
 .grid-item.hover-skew:hover img      { filter: grayscale(0%) contrast(115%) brightness(112%);   transform: scale(1.05) skewX(-1.8deg); }
 

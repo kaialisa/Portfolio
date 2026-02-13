@@ -158,7 +158,7 @@ const projects = [
     role: "Producer",
     desc: "Short film of a live act by Tel Aviv-based drag performer Asis D'Orange examining their relationship with the state. Shown at Hošek Contemporary, Berlin 2019 and The Queer Lens: A Masterclass, RMIT University, Melbourne 2019.",
     grid: "normal",
-    hover: "vivid",
+    hover: "harsh",
   },
   {
     title: "وسام – ضو عيوني – Light of my Eyes",
@@ -249,7 +249,7 @@ const projects = [
     role: "Producer",
     desc: "A week-long youth exchange organized by Critical Queer Solidarity with support from Erasmus+ and the Berlin Senate Department for Culture and Europe. Designed to empower young queer people from Europe, the Middle East and North Africa through creativity, theater and art.",
     grid: "normal",
-    hover: "grayscale",
+    hover: "harsh",
   },
   {
     title: "The Politics of Intersectionality",
@@ -302,7 +302,7 @@ const projects = [
     role: "",
     desc: "",
     grid: "tall",
-    hover: "harsh",
+    hover: "vivid",
   },
   {
     title: "Flowers From Where You Go",
