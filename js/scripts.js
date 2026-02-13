@@ -212,23 +212,30 @@ function initStatusBar() {
   });
 }
 
-  /* ============================================================
+ /* ============================================================
    PIXEL TRAIL
    ============================================================ */
-  function initPixelTrail() {
-  
+function initPixelTrail() {
   const colors = ['#cc2200', '#00ff00', '#ff00ff', '#00ffff', '#ffff00'];
   let isDrawing = false;
   
-  // touch events
+  document.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    createPixel(touch.clientX, touch.clientY);
+  });
+  
   document.addEventListener('touchmove', (e) => {
     const touch = e.touches[0];
     createPixel(touch.clientX, touch.clientY);
   });
   
-  // mouse events for testing
-  document.addEventListener('mousedown', () => { isDrawing = true; });
+  document.addEventListener('mousedown', (e) => { 
+    isDrawing = true;
+    createPixel(e.clientX, e.clientY);
+  });
+  
   document.addEventListener('mouseup', () => { isDrawing = false; });
+  
   document.addEventListener('mousemove', (e) => {
     if (isDrawing) {
       createPixel(e.clientX, e.clientY);
