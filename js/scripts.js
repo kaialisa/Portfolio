@@ -12,6 +12,7 @@ const ABOUT_TEXT   = `
   <a href="mailto:relkasaby@gmail.com">Get in touch →</a>
 `;
 
+
 /* ============================================================
    TICKER
    ============================================================ */
@@ -56,8 +57,10 @@ function buildGrid() {
 
   projects.forEach((p, i) => {
     const cats   = p.categories.join(' ');
+    const hover  = p.hover ? `hover-${p.hover}` : 'hover-warm'; // default to warm if not specified
+    const logo   = p.logo ? 'logo' : '';
     const item   = document.createElement('div');
-    item.className = `grid-item ${p.grid} ${cats}`;
+    item.className = `grid-item ${p.grid} ${cats} ${hover} ${logo}`;
     item.dataset.index = i;
 
     item.innerHTML = `

@@ -4,6 +4,19 @@
 // To add a project: copy one object, paste at the top, fill in the fields
 
 const projects = [
+    {
+    title: "CANDY CRUSHING",
+    categories: ["video"],
+    img: "img/candycrushing.webp",
+    type: "Video",
+    year: "2025",
+    video: "https://www.youtube.com/watch?v=Qj2_faegDKM",
+    link: "",
+    role: "Director",
+    desc: "Hyperpop music video: CANDY CRUSHING by Angel Rider",
+    grid: "wide",
+    hover: "drift",
+  },
   {
     title: "Flikli Showreel",
     categories: ["video"],
@@ -15,6 +28,7 @@ const projects = [
     role: "Scriptwriter",
     desc: "Flikli is a video production studio specializing in creating animated content for awareness, corporate use, education, marketing, and product or service explainers.",
     grid: "wide",
+    hover: "harsh",
   },
   {
     title: "Sexlied",
@@ -27,6 +41,20 @@ const projects = [
     role: "Cinematographer",
     desc: "Music video by artist Achan Malonda addressing the decolonization of Black female sexuality via an investigation of the male gaze. Audiovisual installation exhibited at I AM MILLI by Dr. Natasha A. Kelly at the Society for Contemporary Art, Osnabrück, Germany. Featured in the Berliner Zeitung.",
     grid: "normal",
+    hover: "vivid",
+  },
+      {
+    title: "EuroTrash PopStar",
+    categories: ["video"],
+    img: "img/eurotrashpopstar.webp",
+    type: "Video",
+    year: "2022",
+    video: "https://www.youtube.com/watch?v=xX7hMJkSQ_8",
+    link: "",
+    role: "Cinematographer",
+    desc: "Music video by hyperpop artist Cowboy Blau.",
+    grid: "normal",
+    hover: "drift",
   },
   {
     title: "Queens Against Borders",
@@ -38,7 +66,8 @@ const projects = [
     link: "",
     role: "Director",
     desc: "This visual ethnography examines the work of queer performance artists in Berlin and their entanglement with socially constructed notions of race, gender, and sexuality.",
-    grid: "tall",
+    grid: "wide",
+    hover: "vivid",
   },
   {
     title: "YALLA HAFLA",
@@ -51,18 +80,7 @@ const projects = [
     role: "Producer",
     desc: "YALLA HAFLA is a short film about the collaboration between Darvish, a bellydancer from Syria, and Judy LaDivina, a drag performer from Israel, to put on a monthly show for Berlin's queer community.",
     grid: "normal",
-  },
-  {
-    title: "EuroTrash PopStar",
-    categories: ["video"],
-    img: "img/eurotrashpopstar.webp",
-    type: "Video",
-    year: "2022",
-    video: "https://www.youtube.com/watch?v=xX7hMJkSQ_8",
-    link: "",
-    role: "Cinematographer",
-    desc: "Music video by hyperpop artist Cowboy Blau.",
-    grid: "normal",
+    hover: "cold",
   },
   {
     title: "Crossword",
@@ -75,6 +93,7 @@ const projects = [
     role: "Developer",
     desc: "Browser-based crossword puzzle tool built with vanilla JavaScript. Generates a structured data.js file powering a playable, responsive puzzle rendered with scalable SVG graphics. Features include auto-advancing clues, solution row tracking, and mobile touch support.",
     grid: "wide",
+    hover: "grayscale",
   },
   {
     title: "Rising",
@@ -87,6 +106,7 @@ const projects = [
     role: "Cinematographer",
     desc: "Short documentary about the resilience of the human spirit and the power of unity and connection. Produced by The Tenth Man x Grizzly. Kerry International Film Festival 2021 · Best Inspirational Film, Paris Film Festival 2021 · YDA Shortlist 2021 · Beyond the Short 2020.",
     grid: "normal",
+    hover: "grayscale",
   },
   {
     title: "A House Where Our Heart Lies",
@@ -99,6 +119,7 @@ const projects = [
     role: "Cinematographer",
     desc: "Directed by Lauren Klinger, this ethnographic film explores a Berlin neighborhood's relationship to the Liebig 34 anarcha-feminist squat, which faces eviction. Premiered at the East Expression Artistic Studies Circle of Udine, Italy.",
     grid: "normal",
+    hover: "invert",
   },
   {
     title: "Body as Prosthesis",
@@ -111,6 +132,7 @@ const projects = [
     role: "Cinematographer",
     desc: "Jonas Büßecker's work in which he collaborates with performance artists from the Berlin drag community who utilize their bodies as instruments to create alter egos and playful illusions around appearance, gender and power. Exhibited at Hošek Contemporary, Berlin 2020.",
     grid: "normal",
+    hover: "vivid",
   },
   {
     title: "Stage Performances",
@@ -123,6 +145,7 @@ const projects = [
     role: "Camera, Editing",
     desc: "A selection of drag performances in Berlin.",
     grid: "wide",
+    hover: "harsh",
   },
   {
     title: "Pinkwashing",
@@ -135,6 +158,7 @@ const projects = [
     role: "Producer",
     desc: "Short film of a live act by Tel Aviv-based drag performer Asis D'Orange examining their relationship with the state. Shown at Hošek Contemporary, Berlin 2019 and The Queer Lens: A Masterclass, RMIT University, Melbourne 2019.",
     grid: "normal",
+    hover: "vivid",
   },
   {
     title: "وسام – ضو عيوني – Light of my Eyes",
@@ -147,6 +171,7 @@ const projects = [
     role: "Producer",
     desc: "Music video following Syrian performer Wizzy through the heart of Berlin, as he reflects on a distant lover and his journey to Europe.",
     grid: "normal",
+    hover: "invert",
   },
   {
     title: "Job Board",
@@ -159,6 +184,7 @@ const projects = [
     role: "Developer",
     desc: "A lightweight job board built with vanilla JavaScript and PapaParse to dynamically load and filter job listings from a CSV file. Features keyword search, state-based filtering with logo icons, remote job tags, and sorting by date. Includes structured schema markup for SEO.",
     grid: "normal",
+    hover: "drift",
   },
   {
     title: "Climate Change Action Series",
@@ -171,6 +197,7 @@ const projects = [
     role: "Producer",
     desc: "Produced in conjunction with Queens Against Borders featuring keynote speakers Nadja Charaby (Rosa Luxemburg Foundation) and Tonny Nowshin (350.org).",
     grid: "wide",
+    hover: "warm",
   },
   {
     title: "Entropie Festival",
@@ -183,6 +210,7 @@ const projects = [
     role: "Cinematographer",
     desc: "The Entropie festival — where political content, social criticism, and utopia meet theatre and performance.",
     grid: "normal",
+    hover: "cold",
   },
   {
     title: "Sustainable Consumption",
@@ -195,6 +223,7 @@ const projects = [
     role: "Director",
     desc: "Research-based film funded by the Berlin University Alliance exploring the interconnectedness of food choice, social inequalities, and ecological degradation.",
     grid: "normal",
+    hover: "cold",
   },
   {
     title: "UIkit Magazine Grid Filter",
@@ -207,6 +236,7 @@ const projects = [
     role: "Developer",
     desc: "Vanilla JavaScript script filtering a grid of magazine-style posts by region and category. Supports multi-select filters, tag-based filtering, and optional search. Fully responsive with UIkit transitions.",
     grid: "normal",
+    hover: "warm",
   },
   {
     title: "Drag It Up!",
@@ -219,6 +249,7 @@ const projects = [
     role: "Producer",
     desc: "A week-long youth exchange organized by Critical Queer Solidarity with support from Erasmus+ and the Berlin Senate Department for Culture and Europe. Designed to empower young queer people from Europe, the Middle East and North Africa through creativity, theater and art.",
     grid: "normal",
+    hover: "grayscale",
   },
   {
     title: "The Politics of Intersectionality",
@@ -230,7 +261,9 @@ const projects = [
     link: "",
     role: "Producer",
     desc: "Interview series documenting the inaugural conference of the MA program Gender, Intersectionality and Politics on behalf of the Gender and Diversity Division of Freie Universität Berlin, featuring keynote speakers Dr. Akwugo Emejulu and Dr. Sirma Bilge.",
-    grid: "normal",
+    grid: "wide",
+    hover: "warm",
+    logo: true,
   },
   {
     title: "EQUIP",
@@ -242,7 +275,8 @@ const projects = [
     link: "",
     role: "Producer",
     desc: "Equal Opportunities in Higher Education — a DIES-Partnership funded by BMZ and DAAD, collaborating between Freie Universität Berlin, the University of Cape Coast, Ghana, and Kenyatta University, Kenya.",
-    grid: "normal",
+    grid: "wide",
+    hover: "drift",
   },
   {
     title: "Online Magazine",
@@ -254,7 +288,8 @@ const projects = [
     link: "",
     role: "Developer",
     desc: "Digitizing print media for web with accessible and responsive layouts.",
-    grid: "wide",
+    grid: "normal",
+    hover: "grayscale",
   },
   {
     title: "Flowers From Where You Go",
@@ -267,6 +302,7 @@ const projects = [
     role: "Camera",
     desc: "Music video by artist The Somnambulist. Featured in indieRepublik magazine.",
     grid: "normal",
+    hover: "grayscale",
   },
   {
     title: "SO36",
@@ -279,6 +315,7 @@ const projects = [
     role: "",
     desc: "",
     grid: "normal",
+    hover: "harsh",
   },
   {
     title: "Very Confused",
