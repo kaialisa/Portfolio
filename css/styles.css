@@ -495,18 +495,50 @@ body {
 .modal-action:hover { background: var(--ink); }
 
 .modal-close {
-  position:   absolute;
-  top:        10px;
-  right:      14px;
+  position: absolute;
+  top: 10px;
+  right: 14px;
   font-family: 'VT323', monospace;
-  font-size:  2rem;
-  color:      var(--bg);
-  background: none;
-  border:     none;
-  cursor:     crosshair;
+  font-size: 2.5rem;
+  color: var(--bg);
+  background: var(--ink);
+  border: 2px solid var(--bg);
+  cursor: crosshair;
   line-height: 1;
-  z-index:    10;
-  mix-blend-mode: difference;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: none;
+}
+
+.modal-close:hover {
+  animation: pixel-wiggle 0.3s steps(6) infinite;
+  background: var(--red);
+  border-color: var(--ink);
+}
+
+.modal-close:active {
+  animation: pixel-shrink 0.15s steps(3) forwards;
+}
+
+@keyframes pixel-wiggle {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  16%  { transform: translate(-2px, 1px) rotate(-3deg); }
+  33%  { transform: translate(2px, -1px) rotate(3deg); }
+  50%  { transform: translate(-1px, 2px) rotate(-2deg); }
+  66%  { transform: translate(1px, -2px) rotate(2deg); }
+  83%  { transform: translate(-2px, -1px) rotate(-1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes pixel-shrink {
+  0%   { transform: scale(1); }
+  33%  { transform: scale(0.7); }
+  66%  { transform: scale(0.4); }
+  100% { transform: scale(0.1); opacity: 0; }
 }
 
 /* ── STATUS BAR ── */
