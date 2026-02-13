@@ -8,8 +8,7 @@ const LAST_UPDATED = 'FEBRUARY 2026';
 const ABOUT_IMG    = 'img/IMG_3461-scaled.webp';
 const ABOUT_TEXT   = `
   <h2>About</h2>
-  <p>Rakaia Lisa Fokkena is a Berlin-based multimedia producer. She holds an M.A. in Visual and Media Anthropology from Freie Universität Berlin. Her work spans cinematography, documentary film, web development, and sociocultural research — with a focus on queer performance, migration, and political art.</p>
-  <p>Currently expanding into front-end development. Previously: non-profit and academic sectors in the U.S. and Germany.</p>
+  <p>Rakaia Lisa Fokkena is a Berlin-based multimedia producer. She holds an M.A. in Visual and Media Anthropology from Freie Universität Berlin. Her work spans cinematography, documentary film, web development, and sociocultural research with a focus on queer performance, migration, and political art.</p>
   <a href="mailto:relkasaby@gmail.com">Get in touch →</a>
 `;
 
