@@ -39,7 +39,7 @@ Open `js/projects.js` and add a new object at the **top** of the `projects` arra
 ### Grid Sizes
 - **normal** — 1x1 square
 - **wide** — 2x1 horizontal rectangle
-- **tall** — 1x2 vertical rectangle (becomes normal on mobile)
+- **tall** — 1x2 vertical rectangle
 
 ### Hover Effects
 Each project needs a `hover` value that controls how the image transforms on hover:
