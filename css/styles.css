@@ -526,6 +526,21 @@ body {
   opacity:    0.8;
 }
 
+/* pixel trail effect */
+.pixel-trail {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: pixel-fade 0.5s ease-out forwards;
+}
+
+@keyframes pixel-fade {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.3); }
+}
+
 /* ── FOOTER ── */
 .site-footer {
   border-top: 2px solid var(--ink);

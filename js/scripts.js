@@ -212,6 +212,45 @@ function initStatusBar() {
   });
 }
 
+  /* ============================================================
+   MOBILE PIXEL TRAIL
+   ============================================================ */
+function initPixelTrail() {
+  // only run on mobile
+  if (window.innerWidth > 560) return;
+  
+  const colors = ['#cc2200', '#00ff00', '#ff00ff', '#00ffff', '#ffff00'];
+  let isDrawing = false;
+  
+  // touch events
+  document.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    createPixel(touch.clientX, touch.clientY);
+  });
+  
+  // mouse events for testing
+  document.addEventListener('mousedown', () => { isDrawing = true; });
+  document.addEventListener('mouseup', () => { isDrawing = false; });
+  document.addEventListener('mousemove', (e) => {
+    if (isDrawing) {
+      createPixel(e.clientX, e.clientY);
+    }
+  });
+  
+  function createPixel(x, y) {
+    const pixel = document.createElement('div');
+    pixel.className = 'pixel-trail';
+    pixel.style.left = x + 'px';
+    pixel.style.top = (y + window.scrollY) + 'px';
+    pixel.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    
+    document.body.appendChild(pixel);
+    
+    setTimeout(() => pixel.remove(), 500);
+  }
+}
+
+
 /* ============================================================
    INIT - runs when DOM is ready
    ============================================================ */
@@ -222,4 +261,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initFilter();
   initModal();
   initStatusBar();
+  initPixelTrail();
 });
