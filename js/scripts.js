@@ -69,8 +69,7 @@ function buildGrid() {
       <img src="${p.img}" alt="${p.title}" loading="lazy">
       <div class="item-overlay">
         <div class="item-title">${p.title}</div>
-        <div class="item-meta">${p.categories.map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(' + ')}</div>
-        ${p.role ? `<div class="item-role">${p.role}</div>` : ''}
+        <div class="item-meta">${p.categories.map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(' + ')}</div> 
       </div>
     `;
 
