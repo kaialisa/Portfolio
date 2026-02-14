@@ -222,7 +222,7 @@ function initWebcoreVisitorCounter() {
 
 function updateCounterDisplay(element, count) {
   // Format with leading zeros and spaces between digits
-  const formatted = count.toString().padStart(8, '0').split('').join(' ');
+  const formatted = count.toString().padStart(6, '0').split('').join(' ');
   element.textContent = formatted;
 }
 
@@ -308,8 +308,7 @@ glitchStyle.textContent = `
 document.head.appendChild(glitchStyle);
 
 // ============================================
-// EASTER EGG: KONAMI CODE
-// Activates webcore mode with konami code
+// EASTER EGG
 // ============================================
 
 let konamiCode = [];
@@ -326,13 +325,12 @@ function initKonamiCode() {
     
     // Check if sequence matches
     if (konamiCode.join('') === konamiSequence.join('')) {
-      // Activate webcore mode with extra flair
       const webcoreCSS = document.getElementById('webcore-css');
       if (webcoreCSS && webcoreCSS.disabled) {
         document.body.style.animation = 'glitch-entrance 1s';
         setTimeout(() => {
           document.getElementById('mode-toggle').click();
-          alert('🎮 KONAMI CODE ACTIVATED! 🎮');
+          alert('welcome back to the old internet');
           document.body.style.animation = '';
         }, 500);
       }

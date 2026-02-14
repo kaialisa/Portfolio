@@ -639,8 +639,12 @@ footer .copyright,
   border: 4px solid #00ff00 !important;
   padding: 20px !important;
   text-align: center;
-  margin: 30px auto !important;
-  max-width: 400px;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 30px 0 !important;
+  flex: 1 !important;
   box-shadow: 0 0 25px rgba(0,255,0,0.5) !important;
 }
 
@@ -668,9 +672,14 @@ footer .copyright,
 .midi-player {
   background: #000 !important;
   border: 5px solid #00ffff !important;
+  text-align: center;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
   padding: 25px !important;
-  margin: 30px auto !important;
-  max-width: 500px;
+  margin: 30px 0 !important;
+  flex: 1 !important;
   box-shadow: 0 0 30px rgba(0,255,255,0.5) !important;
 }
 
@@ -692,16 +701,18 @@ footer .copyright,
 
 .midi-controls {
   display: flex;
-  gap: 10px;
+  gap: 5px !important; /* Reduced from 10px */
   justify-content: center;
   margin: 15px 0;
+  flex-wrap: nowrap !important; /* Changed from wrap to nowrap */
 }
 
 .midi-button {
   background: linear-gradient(180deg, #c0c0c0, #808080) !important;
   border: 3px outset #fff !important;
-  padding: 10px 15px !important;
+  padding: 6px 10px !important; /* Reduced from 10px 15px */
   font-family: 'VT323', monospace !important;
+  font-size: 14px !important; /* Add this to make text smaller */
   font-weight: bold;
   cursor: pointer;
   transition: all 0.1s;
@@ -723,8 +734,8 @@ footer .copyright,
   border: 5px dashed #ff0000 !important;
   padding: 30px !important;
   text-align: center;
-  margin: 40px auto !important;
-  max-width: 800px;
+  margin: 30px 0 !important;
+  flex: 1 !important;
   animation: construction-pulse 2s infinite;
 }
 
@@ -749,36 +760,19 @@ footer .copyright,
   font-weight: bold;
 }
 
-/* Webring */
-.webring {
-  background: #ff00ff !important;
-  color: #fff !important;
-  padding: 25px !important;
-  text-align: center;
-  margin: 30px auto !important;
-  max-width: 600px;
-  border: 5px double #ffff00 !important;
-  box-shadow: 0 0 20px rgba(255,0,255,0.5);
+.webcore-only:has(.visitor-counter) {
+  display: flex !important;
+  gap: 20px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
 }
 
-.webring h3,
-.webring p {
-  font-family: 'VT323', monospace !important;
-  font-size: 20px !important;
-  color: #fff !important;
-  margin: 10px 0;
-}
 
-.webring a {
-  color: #00ffff !important;
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: 1px 1px 0 #000;
-}
-
-.webring a:hover {
-  color: #ffff00 !important;
-  text-decoration: underline;
+@media (max-width: 900px) {
+  .webcore-only:has(.visitor-counter) {
+    flex-direction: column !important;
+  }
 }
 
 /* 88x31 Badge wall */
