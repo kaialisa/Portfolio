@@ -37,7 +37,7 @@ function initWebcoreToggle() {
   function enableWebcoreMode() {
     webcoreCSS.disabled = false;
     localStorage.setItem('webcoreMode', 'true');
-    toggleButton.textContent = '← BACK TO BRUTALISM';
+    toggleButton.textContent = '← TAKE ME BACK';
     
     // Show webcore-only elements
     document.querySelectorAll('.webcore-only').forEach(el => {

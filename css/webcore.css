@@ -274,9 +274,6 @@ nav button.active,
   margin-right: auto !important;
 }
 
-/* Grid sizing handled by brutalist CSS - we just add visual effects */
-
-/* Girlypop Y2K pixel borders - thicker with random color variety */
 .grid-item {
   background: #000 !important;
   padding: 0 !important;
@@ -290,7 +287,7 @@ nav button.active,
   overflow: hidden;
 }
 
-/* More varied random color combinations */
+/* varied color combinations */
 .grid-item:nth-child(6n+1) {
   box-shadow: 
     0 0 0 2px #ff69b4,
@@ -343,19 +340,15 @@ nav button.active,
     0 0 40px rgba(255,0,255,0.8),
     0 10px 30px rgba(0,0,0,0.5) !important;
   z-index: 10;
-  /* Remove the filter here so your hover-warm, hover-harsh, etc can work */
 }
 
-/* Project images - keep natural, don't oversaturate */
+/* Project images */
 .grid-item img {
   border: 2px solid #00ff00 !important;
   transition: all 0.3s !important;
-  /* Don't override width/height/object-fit - brutalist CSS handles it */
-  /* Your brutalist hover effects (hover-warm, hover-harsh, etc) will apply here */
 }
 
 .grid-item:hover img {
-  /* Just add a subtle lift, your hover classes handle the color effects */
   transform: scale(1.02) !important;
 }
 
@@ -371,7 +364,6 @@ nav button.active,
   line-height: 1.6;
 }
 
-/* Add padding to overlay content since card has no padding */
 .grid-item .item-overlay {
   padding: 12px !important;
 }
@@ -387,30 +379,6 @@ nav button.active,
   font-size: 18px !important;
 }
 
-/* "NEW" badge for recent projects */
-.grid-item.new::before,
-.grid-item[data-new="true"]::before {
-  content: "NEW!";
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background: #ff1493;
-  color: #fff;
-  padding: 8px 14px;
-  font-family: 'PressStart2P', monospace;
-  font-size: 10px;
-  font-weight: bold;
-  transform: rotate(12deg);
-  border: 3px solid #ffff00;
-  box-shadow: 
-    0 0 0 2px #ff1493,
-    3px 3px 0 rgba(0,0,0,0.5),
-    0 0 15px rgba(255,20,147,0.8);
-  animation: blink 0.6s infinite;
-  z-index: 5;
-}
-
-/* Add decorative stars to corners - girlypop! */
 .grid-item::after {
   content: "✦";
   position: absolute;
@@ -425,7 +393,6 @@ nav button.active,
   z-index: 5;
 }
 
-/* Alternate with hearts on some cards */
 .grid-item:nth-child(even)::after {
   content: "♡";
   color: #ff69b4;
@@ -470,28 +437,33 @@ nav button.active,
   text-shadow: 3px 3px 0 #00ffff !important;
 }
 
-.modal .close,
-.modal button,
-.modal-close {
+.modal-action:not([style*="display: none"]) {
   background: linear-gradient(180deg, #c0c0c0, #808080) !important;
   border: 3px outset #fff !important;
+  padding: 12px 24px !important;
+  margin: 8px !important;
   color: #000 !important;
+  text-decoration: none !important;
   font-family: 'VT323', monospace !important;
-  font-size: 20px !important;
-  padding: 10px 20px !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 #000 !important;
+  transition: all 0.1s !important;
   cursor: pointer;
 }
 
-.modal .close:hover,
-.modal button:hover,
-.modal-close:hover {
-  background: linear-gradient(180deg, #ff00ff, #00ffff) !important;
+.modal-action:not([style*="display: none"]):hover {
+  background: linear-gradient(180deg, #ffff00, #ff00ff) !important;
+  transform: translate(1px, 1px) !important;
+  box-shadow: 3px 3px 0 #000 !important;
 }
 
-.modal .close:active,
-.modal button:active,
-.modal-close:active {
+.modal-action:not([style*="display: none"]):active {
   border-style: inset !important;
+  transform: translate(3px, 3px) !important;
+  box-shadow: 1px 1px 0 #000 !important;
+  background: linear-gradient(180deg, #808080, #c0c0c0) !important;
 }
 
 /* ============================================
