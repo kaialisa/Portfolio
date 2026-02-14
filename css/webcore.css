@@ -169,7 +169,8 @@ nav,
 nav a,
 nav button,
 .filter-bar button,
-.filter-btn {
+.filter-btn,
+.about-btn {
   display: inline-block !important;
   background: linear-gradient(180deg, #c0c0c0, #808080) !important;
   border: 3px outset #fff !important;
@@ -189,7 +190,8 @@ nav button,
 nav a:hover,
 nav button:hover,
 .filter-bar button:hover,
-.filter-btn:hover {
+.filter-btn:hover,
+.about-btn:hover {
   background: linear-gradient(180deg, #ffff00, #ff00ff) !important;
   transform: translate(1px, 1px) !important;
   box-shadow: 3px 3px 0 #000 !important;
@@ -202,7 +204,8 @@ nav button.active,
 .filter-bar button:active,
 .filter-bar button.active,
 .filter-btn:active,
-.filter-btn.active {
+.filter-btn.active,
+.about-btn.active {
   border-style: inset !important;
   transform: translate(3px, 3px) !important;
   box-shadow: 1px 1px 0 #000 !important;
@@ -801,6 +804,28 @@ footer .copyright,
     right: 10px !important;
   }
 }
+  nav,
+  .filter-bar {
+    padding: 12px !important;
+  }
+  
+  nav a,
+  nav button,
+  .filter-bar button,
+  .filter-btn {
+    padding: 8px 12px !important; /* Smaller padding */
+    margin: 4px !important; /* Smaller margin */
+    font-size: 12px !important; /* Smaller text */
+  }
+  
+  #mode-toggle,
+  .mode-toggle {
+    font-size: 12px !important;
+    padding: 10px 15px !important;
+    top: 10px !important;
+    right: 10px !important;
+  }
+
 
 /* ============================================
    ACCESSIBILITY

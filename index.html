@@ -67,12 +67,13 @@
   <!-- ========================================
        HEADER
        ======================================== -->
-  <header class="site-header">
+<header class="site-header">
+  <div class="header-left">
     <a href="./" class="site-name">KAIA LISA</a>
-    <div class="header-buttons">
-    <button class="about-btn" id="aboutToggle">ABOUT</button>
-    <button id="mode-toggle" class="about-btn">TAKE ME BACK TO 2005 →</button></div>
-  </header>
+    <button id="mode-toggle" class="warning-toggle">TAKE ME BACK TO 2005</button>
+  </div>
+  <button class="about-btn" id="aboutToggle">ABOUT</button>
+</header>
 
   <!-- ========================================
        TICKER
@@ -86,20 +87,7 @@
        ======================================== -->
   <div class="about-panel" id="aboutPanel"></div>
 
-  <!-- ========================================
-       FILTER BAR
-       ======================================== -->
-  <nav class="filter-bar" aria-label="Filter projects">
-    <button class="filter-btn active" data-filter="all">All Work</button>
-    <button class="filter-btn" data-filter="video">Video</button>
-    <button class="filter-btn" data-filter="digital">Digital</button>
-    <button class="filter-btn" data-filter="research">Research</button>
-  </nav>
 
-  <!-- ========================================
-       PORTFOLIO GRID (Populated by JS)
-       ======================================== -->
-  <main class="portfolio-grid" id="grid"></main>
 
   <!-- ========================================
        WEBCORE-ONLY WIDGETS
@@ -116,7 +104,7 @@
     <!-- MIDI Player -->
     <div class="midi-player">
       <h4>♪♫ NOW PLAYING ♫♪</h4>
-      <p class="now-playing">webcore_vibes.mid</p>
+      <p class="now-playing">kaya.mid</p>
       <div class="midi-controls">
         <button class="midi-button" data-action="prev">⏮️ PREV</button>
         <button class="midi-button" data-action="play">▶️ PLAY</button>
@@ -141,6 +129,21 @@
     </div>
     
   </div>
+
+    <!-- ========================================
+       FILTER BAR
+       ======================================== -->
+  <nav class="filter-bar" aria-label="Filter projects">
+    <button class="filter-btn active" data-filter="all">All Work</button>
+    <button class="filter-btn" data-filter="video">Video</button>
+    <button class="filter-btn" data-filter="digital">Digital</button>
+    <button class="filter-btn" data-filter="research">Research</button>
+  </nav>
+
+  <!-- ========================================
+       PORTFOLIO GRID (Populated by JS)
+       ======================================== -->
+  <main class="portfolio-grid" id="grid"></main>
 
   <!-- ========================================
        MODAL

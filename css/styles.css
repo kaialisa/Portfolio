@@ -65,26 +65,35 @@ body {
 
 /* ── HEADER ── */
 .site-header {
-  display:         flex;
+  display: flex;
   justify-content: space-between;
-  align-items:     flex-end;
-  padding:         24px 28px 12px;
-  border-bottom:   2px solid var(--ink);
-  position:        sticky;
-  top:             0;
-  background:      var(--bg);
-  z-index:         100;
+  align-items: baseline; 
+  padding: 24px 28px 12px;
+  border-bottom: 2px solid var(--ink);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+
+.header-left {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
 }
 
 .site-name {
-  font-family:  'Bebas Neue', sans-serif;
-  font-size:    clamp(2.4rem, 6vw, 5.5rem);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.4rem, 6vw, 5.5rem);
   letter-spacing: 0.04em;
-  line-height:  1;
-  color:        var(--ink);
+  line-height: 1;
+  color: var(--ink);
   text-decoration: none;
-  transition:   color 0.1s;
+  transition: color 0.1s;
+  display: inline-block;
+  vertical-align: bottom;
 }
+
 .site-name:hover { color: var(--red); }
 
 /* ── BUTTONS ── */
@@ -98,7 +107,6 @@ body {
   background: #c0c0c0;
   color: #000000;
   padding: 6px 16px;
-  margin-bottom: 6px;
   cursor: default;
   transition: none;
   border: none;
@@ -128,10 +136,32 @@ body {
   padding: 7px 15px 5px 17px;
 }
 
-.header-buttons {
-  display: flex;
-  gap: 8px;
-  align-items: flex-end;
+.warning-toggle {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #ffff00;
+  color: #000000;
+  padding: 6px 16px;
+  cursor: pointer;
+  border: 2px solid #000000;
+  box-shadow: 2px 2px 0 #000000;
+  transition: all 0.1s;
+}
+
+.warning-toggle:hover {
+  background: #ff0000;
+  color: #ffffff;
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #000000;
+}
+
+.warning-toggle:active {
+  background: #cc0000;
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 #000000;
 }
 
 .contact-btn {
