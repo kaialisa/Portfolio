@@ -622,7 +622,7 @@ body {
 }
 
 .modal-close:hover  { animation: pixel-wiggle 0.3s steps(6) infinite; background: var(--red); border-color: var(--ink); }
-.modal-close:active { animation: pixel-shrink 0.15s steps(3) forwards; }
+.modal-close:active { background: var(--red); transform: scale(0.95); }
 
 @keyframes pixel-wiggle {
   0%   { transform: translate(0, 0)      rotate(0deg); }
