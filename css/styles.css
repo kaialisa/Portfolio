@@ -495,7 +495,7 @@ body {
 }
 
 .modal-category {
-  font-size:      0.8rem;
+  font-size:      1rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color:          var(--red);
@@ -511,7 +511,7 @@ body {
 }
 
 .modal-role {
-  font-size:      0.8rem;
+  font-size:      1rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color:          #888;
@@ -520,14 +520,14 @@ body {
 }
 
 .modal-desc {
-  font-size:   1rem;
+  font-size:   1.2rem;
   line-height: 1.75;
   color:       #333;
 }
 
 .modal-action {
   font-family:     'Courier Prime', monospace;
-  font-size:       0.75rem;
+  font-size:       1rem;
   letter-spacing:  0.05em;
   text-transform:  uppercase;
   color:           #000000;

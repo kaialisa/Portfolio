@@ -25,7 +25,7 @@ const projects = [
     year: "2022",
     video: "https://www.youtube.com/watch?v=L1pKW69Z7ss",
     link: "",
-    role: "Cinematographer",
+    role: "Director",
     desc: "Music video by artist Achan Malonda addressing the decolonization of Black female sexuality via an investigation of the male gaze. Audiovisual installation exhibited at I AM MILLI by Dr. Natasha A. Kelly at the Society for Contemporary Art, Osnabrück, Germany. Featured in the Berliner Zeitung.",
     grid: "normal",
     hover: "cold",
