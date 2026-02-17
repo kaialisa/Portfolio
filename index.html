@@ -25,12 +25,12 @@
 
   <link rel="icon" type="image/png" href="/img/favicon.png">
   <meta name="theme-color" content="#000000">
-  
+
   <!-- Preload fonts -->
   <link rel="preload" href="fonts/bebas-neue.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/courier-prime-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/vt323.woff2" as="font" type="font/woff2" crossorigin>
-  
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/webcore.css" id="webcore-css" disabled>
@@ -53,109 +53,107 @@
   </script>
 </head>
 <body>
-  
+<a href="#grid" class="skip-link">Skip to content</a>
   <!-- ========================================
        WEBCORE-ONLY BACKGROUND EFFECTS
        Hidden by default, shown in webcore mode
        ======================================== -->
-  <div class="webcore-only" style="display: none;">
+  <div class="webcore-only" style="display: none;" aria-hidden="true">
     <div class="stars" id="starfield"></div>
     <div id="particles"></div>
   </div>
-  
+
 
   <!-- ========================================
        HEADER
        ======================================== -->
-<header class="site-header">
-  <div class="header-left">
-    <a href="./" class="site-name">KAIA LISA</a>
-  </div>
-  <div class="header-right">
-    <button id="mode-toggle" class="warning-toggle">
-      <span class="btn-long">TAKE ME BACK TO 2005</span>
-      <span class="btn-short">🎉</span>
-    </button>
-    <button class="about-btn" id="aboutToggle">ABOUT</button>
-  </div>
-</header>
+  <header class="site-header" role="banner">
+    <div class="header-left">
+      <a href="./" class="site-name">KAIA LISA</a>
+    </div>
+    <div class="header-right">
+      <button id="mode-toggle" class="warning-toggle" aria-label="Switch to retro 2005 mode">
+        <span class="btn-long" aria-hidden="true">TAKE ME BACK TO 2005</span>
+        <span class="btn-short" aria-hidden="true">🎉</span>
+      </button>
+      <button class="about-btn" id="aboutToggle" aria-expanded="false" aria-controls="aboutPanel">ABOUT</button>
+    </div>
+  </header>
 
   <!-- ========================================
        TICKER
        ======================================== -->
-  <div class="ticker-wrap">
+  <div class="ticker-wrap" aria-hidden="true">
     <span class="ticker" id="ticker"></span>
   </div>
 
   <!-- ========================================
        ABOUT PANEL (Populated by JS)
        ======================================== -->
-  <div class="about-panel" id="aboutPanel"></div>
-
+  <div class="about-panel" id="aboutPanel" aria-live="polite"></div>
 
 
   <!-- ========================================
        WEBCORE-ONLY WIDGETS
        Hidden by default, shown in webcore mode
        ======================================== -->
-  <div class="webcore-only" style="display: none;">
-    
+  <div class="webcore-only" style="display: none;" aria-hidden="true">
+
     <!-- Visitor Counter -->
     <div class="visitor-counter counter">
       <p>YOU ARE VISITOR NUMBER:</p>
       <div class="counter-display">0 0 0 0 0 0</div>
     </div>
-    
+
     <!-- MIDI Player -->
     <div class="midi-player">
       <h4>♪♫ NOW PLAYING ♫♪</h4>
       <p class="now-playing">kaya.mid</p>
       <div class="midi-controls">
-        <button class="midi-button" data-action="prev">⏮️ PREV</button>
-        <button class="midi-button" data-action="play">▶️ PLAY</button>
-        <button class="midi-button" data-action="pause">⏸️ PAUSE</button>
-        <button class="midi-button" data-action="next">⏭️ NEXT</button>
+        <button class="midi-button" data-action="prev" aria-label="Previous track">⏮️ PREV</button>
+        <button class="midi-button" data-action="play" aria-label="Play">▶️ PLAY</button>
+        <button class="midi-button" data-action="pause" aria-label="Pause">⏸️ PAUSE</button>
+        <button class="midi-button" data-action="next" aria-label="Next track">⏭️ NEXT</button>
       </div>
-      <p style="color: #00ffff; text-align: center; margin-top: 15px; font-size: 16px;">
-      </p>
+      <p style="color: #00ffff; text-align: center; margin-top: 15px; font-size: 16px;"></p>
     </div>
-    
+
     <!-- Under Construction -->
     <div class="construction under-construction">
       <h2>🚧 MORE PROJECTS COMING SOON 🚧</h2>
       <p>This site is under construction!</p>
-      <div style="margin-top: 20px;">
-        <svg width="80" height="80" viewBox="0 0 100 100">
+      <div style="margin-top: 20px;" aria-hidden="true">
+        <svg width="80" height="80" viewBox="0 0 100 100" focusable="false">
           <circle cx="50" cy="50" r="40" fill="#ff0000" stroke="#000" stroke-width="3"/>
           <rect x="25" y="45" width="50" height="10" fill="#000"/>
           <rect x="45" y="25" width="10" height="50" fill="#000"/>
         </svg>
       </div>
     </div>
-    
+
   </div>
 
-    <!-- ========================================
+  <!-- ========================================
        FILTER BAR
        ======================================== -->
-  <nav class="filter-bar" aria-label="Filter projects">
-    <button class="filter-btn active" data-filter="all">All Work</button>
-    <button class="filter-btn" data-filter="video">Video</button>
-    <button class="filter-btn" data-filter="digital">Digital</button>
-    <button class="filter-btn" data-filter="research">Research</button>
+  <nav class="filter-bar" aria-label="Filter projects by category">
+    <button class="filter-btn active" data-filter="all" aria-pressed="true">All Work</button>
+    <button class="filter-btn" data-filter="video" aria-pressed="false">Video</button>
+    <button class="filter-btn" data-filter="digital" aria-pressed="false">Digital</button>
+    <button class="filter-btn" data-filter="research" aria-pressed="false">Research</button>
   </nav>
 
   <!-- ========================================
        PORTFOLIO GRID (Populated by JS)
        ======================================== -->
-  <main class="portfolio-grid" id="grid"></main>
+  <main class="portfolio-grid" id="grid" aria-label="Portfolio projects"></main>
 
   <!-- ========================================
        MODAL
        ======================================== -->
-  <div class="modal-overlay" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal-box">
-      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <button class="modal-close" id="modalClose" aria-label="Close project details">×</button>
       <img src="" alt="" class="modal-img" id="modalImg">
       <div class="modal-body">
         <div>
@@ -175,23 +173,23 @@
   <!-- ========================================
        FOOTER
        ======================================== -->
- <footer class="site-footer">
-    
-  <!-- 88x31 Badge Wall (webcore-only) -->
-  <div class="badges webcore-only" style="display: none;">
-    <img class="badge" src="img/geocities5.gif" alt="Geocities">
-    <img class="badge" src="img/html.gif" alt="Built with HTML">
-    <a href="mailto:relkasaby@gmail.com">
-  <img class="badge" src="img/email.gif" alt="Email">
-</a>
-  </div>
-  
-  <!-- Standard footer (always visible) -->
-  <p class="copyright">
-    © 2026 Kaia Lisa | <a href="legal-notice.html">Legal Notice</a>
-  </p>
-  
-</footer>
+  <footer class="site-footer">
+
+    <!-- 88x31 Badge Wall (webcore-only) -->
+    <div class="badges webcore-only" style="display: none;" aria-hidden="true">
+      <img class="badge" src="img/geocities5.gif" alt="">
+      <img class="badge" src="img/html.gif" alt="">
+      <a href="mailto:relkasaby@gmail.com" aria-label="Send email to Kaia Lisa">
+        <img class="badge" src="img/email.gif" alt="">
+      </a>
+    </div>
+
+    <!-- Standard footer (always visible) -->
+    <p class="copyright">
+      © 2026 Kaia Lisa | <a href="legal-notice.html">Legal Notice</a>
+    </p>
+
+  </footer>
 
   <!-- ========================================
        STATUS BAR
