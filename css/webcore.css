@@ -373,7 +373,36 @@ nav a.active,  nav button.active,
 .modal-title {
   color:       #ff00ff !important;
   font-family: 'PressStart2P', monospace !important;
+  font-size:   clamp(1rem, 3vw, 1.8rem) !important;
   text-shadow: 3px 3px 0 #00ffff !important;
+  line-height: 1.4 !important;
+  word-wrap:   break-word !important;
+}
+
+.modal-body {
+  word-wrap:      break-word !important;
+  overflow-wrap:  break-word !important;
+  overflow:       hidden !important;
+}
+
+.modal-category {
+  font-family: 'VT323', monospace !important;
+  font-size:   1.2rem !important;
+  color:       #00ffff !important;
+}
+
+.modal-role {
+  font-family: 'VT323', monospace !important;
+  font-size:   1.1rem !important;
+  color:       #ffff00 !important;
+}
+
+.modal-desc {
+  font-family: 'VT323', monospace !important;
+  font-size:   1.2rem !important;
+  color:       #00ff00 !important;
+  line-height: 1.5 !important;
+  word-wrap:   break-word !important;
 }
 
 .modal-action:not([style*="display: none"]) {
@@ -642,6 +671,29 @@ footer .copyright,
     width:     100% !important;
     min-width: unset !important;
     flex:      none !important;
+  }
+    .filter-bar {
+    padding: 4px !important;
+    margin:  0 !important;
+  }
+
+  .filter-btn {
+    padding:        6px 8px !important;
+    margin:         2px !important;
+    font-size:      12px !important;
+    letter-spacing: 0.05em !important;
+  }
+  
+  .modal-body {
+    grid-template-columns: 1fr !important;
+  }
+
+  .modal-action:not([style*="display: none"]) {
+    display:   block !important;
+    width:     100% !important;
+    margin:    4px 0 !important;
+    padding:   10px !important;
+    box-sizing: border-box !important;
   }
 }
 
