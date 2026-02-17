@@ -437,11 +437,15 @@ nav a.active,  nav button.active,
 /* ── FOOTER ── */
 footer,
 .site-footer {
-  background:  #1a1a1a !important;
-  border-top:  5px solid #ff00ff !important;
-  padding:     40px 20px !important;
-  margin-top:  60px;
-  box-shadow:  0 -10px 30px rgba(255,0,255,0.3);
+  background:   #1a1a1a !important;
+  border-top:   5px solid #ff00ff !important;
+  padding:      40px 20px !important;
+  margin-top:   60px;
+  box-shadow:   0 -10px 30px rgba(255,0,255,0.3);
+  display:      flex !important;
+  flex-direction: column !important;
+  align-items:  center !important;
+  gap:          16px !important;
 }
 
 footer p,
@@ -683,12 +687,12 @@ footer .copyright,
     font-size:      12px !important;
     letter-spacing: 0.05em !important;
   }
-  
+
   .modal-body {
     grid-template-columns: 1fr !important;
   }
 
-  .modal-action:not([style*="display: none"]) {
+ .modal-action:not([style*="display:none"]):not([style*="display: none"]) {
     display:   block !important;
     width:     100% !important;
     margin:    4px 0 !important;
