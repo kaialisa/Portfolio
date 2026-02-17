@@ -112,6 +112,13 @@ header p {
   margin-top:  15px;
 }
 
+/* About panel text */
+.about-text p {
+  color:      #fff !important;
+  font-size:  0.8rem !important;
+  font-family: 'Courier', monospace !important;
+}
+
 /* Header right — row on desktop, col on mobile */
 .header-right {
   flex-direction: row !important;
