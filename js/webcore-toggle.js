@@ -103,6 +103,7 @@ toggleButton.addEventListener('click', () => {
     cleanupStarfield();
     cleanupParticles();
     cleanupWebcoreCounter();
+    cleanupMidiPlayer();
   }
 }
 
@@ -268,56 +269,46 @@ function cleanupWebcoreCounter() {
 // MIDI PLAYER
 // ============================================
 
+let audio = null;
+
 function initMidiPlayer() {
-  const playButton = document.querySelector('.midi-button[data-action="play"]');
-  const pauseButton = document.querySelector('.midi-button[data-action="pause"]');
+  const playButton     = document.querySelector('.midi-button[data-action="play"]');
+  const pauseButton    = document.querySelector('.midi-button[data-action="pause"]');
+  const nextButton     = document.querySelector('.midi-button[data-action="next"]');
+  const prevButton     = document.querySelector('.midi-button[data-action="prev"]');
   const nowPlayingText = document.querySelector('.midi-player .now-playing');
-  
+
   if (!playButton) return;
-  
-  const tracks = [
-    'webcore_vibes.mid',
-    'y2k_dreams.mid',
-    'neon_nights.mid',
-    'pixel_paradise.mid'
-  ];
-  
-  let currentTrack = 0;
-  let isPlaying = false;
-  
+
+  const trackName = 'track1.mp3';
+  if (nowPlayingText) nowPlayingText.textContent = trackName;
+
+  // Create audio element once
+  if (!audio) {
+    audio = new Audio('audio/' + trackName);
+    audio.loop = true;
+    audio.volume = 0.2;
+  }
+
   playButton.addEventListener('click', () => {
-    isPlaying = true;
-    if (nowPlayingText) {
-      nowPlayingText.textContent = tracks[currentTrack];
-    }
+    audio.play();
     playButton.style.background = 'linear-gradient(180deg, #00ff00, #00aa00)';
   });
-  
+
   pauseButton.addEventListener('click', () => {
-    isPlaying = false;
+    audio.pause();
     playButton.style.background = '';
   });
-  
-  // Next/prev buttons
-  const nextButton = document.querySelector('.midi-button[data-action="next"]');
-  const prevButton = document.querySelector('.midi-button[data-action="prev"]');
-  
-  if (nextButton) {
-    nextButton.addEventListener('click', () => {
-      currentTrack = (currentTrack + 1) % tracks.length;
-      if (nowPlayingText) {
-        nowPlayingText.textContent = tracks[currentTrack];
-      }
-    });
-  }
-  
-  if (prevButton) {
-    prevButton.addEventListener('click', () => {
-      currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
-      if (nowPlayingText) {
-        nowPlayingText.textContent = tracks[currentTrack];
-      }
-    });
+
+  // Next/prev do nothing with a single track but keep buttons functional
+  nextButton?.addEventListener('click', () => {});
+  prevButton?.addEventListener('click', () => {});
+}
+
+function cleanupMidiPlayer() {
+  if (audio) {
+    audio.pause();
+    audio.currentTime = 0;
   }
 }
 
@@ -402,4 +393,5 @@ window.addEventListener('beforeunload', () => {
   cleanupStarfield();
   cleanupParticles();
   cleanupWebcoreCounter();
+  cleanupMidiPlayer();
 });
