@@ -37,7 +37,7 @@ function initWebcoreToggle() {
   function enableWebcoreMode() {
     webcoreCSS.disabled = false;
     localStorage.setItem('webcoreMode', 'true');
-    toggleButton.textContent = '← TAKE ME BACK';
+    toggleButton.innerHTML = '<span class="btn-long">← TAKE ME BACK</span><span class="btn-short">🎉</span>';
     
     // Show webcore-only elements
     document.querySelectorAll('.webcore-only').forEach(el => {
@@ -59,7 +59,7 @@ function initWebcoreToggle() {
   function disableWebcoreMode() {
     webcoreCSS.disabled = true;
     localStorage.setItem('webcoreMode', 'false');
-    toggleButton.textContent = 'TAKE ME BACK TO 2005 →';
+    toggleButton.innerHTML = '<span class="btn-long">TAKE ME BACK TO 2005 →</span><span class="btn-short">🎉</span>';
     
     // Hide webcore-only elements
     document.querySelectorAll('.webcore-only').forEach(el => {
