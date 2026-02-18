@@ -1,23 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 - Page Not Found</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <a href="/" class="site-name">KAIA LISA</a>
-  </header>
-  
-  <main style="max-width: 600px; margin: 100px auto; padding: 0 28px; text-align: center;">
-    <h1 style="font-family: 'Bebas Neue', sans-serif; font-size: 8rem; color: #cc2200; margin: 0; letter-spacing: 0.04em;">404</h1>
-    <p style="font-size: 1.2rem; margin: 20px 0;">PAGE NOT FOUND</p>
-    <p style="margin-bottom: 30px;">The page you're looking for doesn't exist or has been moved.</p>
-    <a href="/" style="display: inline-block; padding: 12px 24px; background: #1a1a1a; color: #f0ece4; text-decoration: none; font-family: 'Courier Prime', monospace; letter-spacing: 0.1em; cursor: crosshair;">← BACK TO HOME</a>
-  </main>
-  
-  <div class="status-bar" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a1a; color: #f0ece4; font-family: 'VT323', monospace; padding: 3px 12px; opacity: 0.8;">ERROR 404 · PAGE NOT FOUND</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 – Page Not Found | Kaia Lisa</title>
+    <meta name="description" content="Page not found." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      .error-main {
+        max-width: 600px;
+        margin: 100px auto;
+        padding: 0 28px;
+        text-align: center;
+      }
+      .error-code {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 8rem;
+        color: var(--red);
+        margin: 0;
+        letter-spacing: 0.04em;
+      }
+      .error-title {
+        font-size: 1.2rem;
+        margin: 20px 0;
+      }
+      .error-msg {
+        margin-bottom: 30px;
+      }
+      .error-link {
+        display: inline-block;
+        padding: 12px 24px;
+        background: var(--ink);
+        color: var(--bg);
+        text-decoration: none;
+        font-family: "Courier Prime", monospace;
+        letter-spacing: 0.1em;
+        cursor: crosshair;
+      }
+      .error-link:hover {
+        background: var(--red);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="header-left">
+        <a href="/" class="site-name">KAIA LISA</a>
+      </div>
+    </header>
+
+    <main class="error-main">
+      <h1 class="error-code">404</h1>
+      <p class="error-title">PAGE NOT FOUND</p>
+      <p class="error-msg">The page you're looking for doesn't exist or has been moved.</p>
+      <a href="/" class="error-link">← BACK TO HOME</a>
+    </main>
+
+    <div class="status-bar" aria-hidden="true">ERROR 404 · PAGE NOT FOUND</div>
+  </body>
 </html>

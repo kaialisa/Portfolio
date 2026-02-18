@@ -4,7 +4,7 @@
 // To add a project: copy one object, paste at the top, fill in the fields
 
 const projects = [
-    {
+  {
     title: "CANDY CRUSHING",
     categories: ["video"],
     img: "img/candycrushing.webp",
@@ -17,7 +17,7 @@ const projects = [
     grid: "tall",
     hover: "drift",
   },
-    {
+  {
     title: "Sexlied",
     categories: ["video"],
     img: "img/sexlied.webp",
@@ -43,7 +43,7 @@ const projects = [
     grid: "normal",
     hover: "grayscale",
   },
-    {
+  {
     title: "Queens Against Borders",
     categories: ["video", "research"],
     img: "img/qab-12.webp",
@@ -69,7 +69,7 @@ const projects = [
     grid: "wide",
     hover: "harsh",
   },
-            {
+  {
     title: "EuroTrash PopStar",
     categories: ["video"],
     img: "img/eurotrashpopstar.webp",
@@ -82,8 +82,8 @@ const projects = [
     grid: "normal",
     hover: "drift",
   },
-    {
-     title: "yap!",
+  {
+    title: "yap!",
     categories: ["digital"],
     img: "img/yap-desktop.webp",
     type: "Website",
@@ -94,7 +94,7 @@ const projects = [
     grid: "tall",
     hover: "harsh",
     textCard: false,
-    },
+  },
   {
     title: "Crossword",
     categories: ["digital"],
@@ -153,7 +153,8 @@ const projects = [
     img: "img/qab-7.webp",
     type: "Video",
     year: "2019",
-    video: "https://www.youtube.com/watch?v=gZl6SffbIMU&list=PLH6dqxIWMjJFo1PeN8tZfFHmqoYX1UKdx",
+    video:
+      "https://www.youtube.com/watch?v=gZl6SffbIMU&list=PLH6dqxIWMjJFo1PeN8tZfFHmqoYX1UKdx",
     link: "",
     role: "Camera, Editing",
     desc: "A selection of drag performances in Berlin.",
@@ -304,7 +305,7 @@ const projects = [
     hover: "grayscale",
     textCard: true,
   },
-    {
+  {
     title: "SO36",
     categories: ["video"],
     img: "img/so36-backstage-1-scaled.webp",

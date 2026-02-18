@@ -12,6 +12,7 @@
   ExpiresByType image/jpg "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
   
   # Fonts - cache for 1 year
   ExpiresByType font/woff2 "access plus 1 year"
@@ -38,4 +39,5 @@
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>

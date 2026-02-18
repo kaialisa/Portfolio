@@ -1,4 +1,5 @@
 ## Kaia Lisa Portfolio
+
 A dependency-free static portfolio site built with plain HTML, CSS, and JavaScript.
 
 ## Project Structure
@@ -23,11 +24,11 @@ Open `js/projects.js` and add a new object at the **top** of the `projects` arra
 {
   title: "Project",
   categories: ["video"], // or ["digital"] or ["research"] or mix
-  img: "img/image.webp", 
-  type: "Video", 
-  year: "2026", 
+  img: "img/image.webp",
+  type: "Video",
+  year: "2026",
   video: "https://youtube.com/watch?v=...", // optional
-  link: "https://example.com", // optional      
+  link: "https://example.com", // optional
   role: "Director", // optional
   desc: "Project description here.", // optional
   grid: "normal",  // or "wide" or "tall"
@@ -37,21 +38,23 @@ Open `js/projects.js` and add a new object at the **top** of the `projects` arra
 ```
 
 ### Grid Sizes
+
 - **normal** — 1x1 square
 - **wide** — 2x1 horizontal rectangle
 - **tall** — 1x2 vertical rectangle
 
 ### Hover Effects
+
 Each project needs a `hover` value that controls how the image transforms on hover:
 
-- **warm** — zoom + warm sepia tint 
-- **cold** — rotate + blue/cyan shift 
+- **warm** — zoom + warm sepia tint
+- **cold** — rotate + blue/cyan shift
 - **harsh** — hard zoom + high contrast
 - **vivid** — saturate + slight rotate
-- **grayscale** — zoom + desaturate to high-contrast B&W 
-- **drift** — float upward + saturated hue shift 
-- **invert** — zoom + slight invert 
-- **skew** — zoom + skew angle 
+- **grayscale** — zoom + desaturate to high-contrast B&W
+- **drift** — float upward + saturated hue shift
+- **invert** — zoom + slight invert
+- **skew** — zoom + skew angle
 
 ## Adding New Images
 
