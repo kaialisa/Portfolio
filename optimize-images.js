@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const imgDir = "./img";
-const maxWidth = 1920;
+const maxWidth = 1400;
 
 const files = fs.readdirSync(imgDir).filter((f) => {
   if (!/\.(jpg|jpeg|png)$/i.test(f)) return false; // only process jpg/png
