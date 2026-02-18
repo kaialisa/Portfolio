@@ -24,48 +24,41 @@ function initWebcoreToggle() {
   let mobileTapPending = false;
   let mobileTapTimer = null;
 
-// Prevent double-tap zoom on mobile
+// Prevent double-tap zoom and mobile tap logic
 toggleButton.addEventListener("touchend", (e) => {
   e.preventDefault();
-}, { passive: false });
 
-  toggleButton.addEventListener("click", () => {
-    // On desktop (hover available), behave as normal single click
-    if (window.matchMedia("(hover: hover)").matches) {
-      if (webcoreCSS.disabled) {
-        enableWebcoreMode();
-      } else {
-        disableWebcoreMode();
-      }
-      return;
-    }
-
-    // On mobile/touch: require double tap
-    if (webcoreCSS.disabled) {
-      if (!mobileTapPending) {
-        // First tap — turn red as warning
-        mobileTapPending = true;
-        toggleButton.style.background = "#ff0000";
-        toggleButton.style.color = "#ffffff";
-        mobileTapTimer = setTimeout(() => {
-          // Reset if second tap doesn't come within 1.5s
-          mobileTapPending = false;
-          toggleButton.style.background = "";
-          toggleButton.style.color = "";
-        }, 1500);
-      } else {
-        // Second tap — activate
-        clearTimeout(mobileTapTimer);
+  if (webcoreCSS.disabled) {
+    if (!mobileTapPending) {
+      mobileTapPending = true;
+      toggleButton.style.background = "#ff0000";
+      toggleButton.style.color = "#ffffff";
+      mobileTapTimer = setTimeout(() => {
         mobileTapPending = false;
         toggleButton.style.background = "";
         toggleButton.style.color = "";
-        enableWebcoreMode();
-      }
+      }, 1500);
     } else {
-      // Already in webcore mode — single tap to go back
-      disableWebcoreMode();
+      clearTimeout(mobileTapTimer);
+      mobileTapPending = false;
+      toggleButton.style.background = "";
+      toggleButton.style.color = "";
+      enableWebcoreMode();
     }
-  });
+  } else {
+    disableWebcoreMode();
+  }
+}, { passive: false });
+
+// Desktop click handler only
+toggleButton.addEventListener("click", () => {
+  if (!window.matchMedia("(hover: hover)").matches) return;
+  if (webcoreCSS.disabled) {
+    enableWebcoreMode();
+  } else {
+    disableWebcoreMode();
+  }
+});
 
   function enableWebcoreMode() {
     webcoreCSS.disabled = false;
