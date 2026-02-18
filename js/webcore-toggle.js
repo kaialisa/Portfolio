@@ -35,6 +35,11 @@ function initWebcoreToggle() {
       return;
     }
 
+    // Prevent double-tap zoom on mobile
+      toggleButton.addEventListener("touchend", (e) => {
+        e.preventDefault();
+}, { passive: false });
+
     // On mobile/touch: require double tap
     if (webcoreCSS.disabled) {
       if (!mobileTapPending) {
