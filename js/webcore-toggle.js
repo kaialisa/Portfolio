@@ -24,6 +24,11 @@ function initWebcoreToggle() {
   let mobileTapPending = false;
   let mobileTapTimer = null;
 
+// Prevent double-tap zoom on mobile
+toggleButton.addEventListener("touchend", (e) => {
+  e.preventDefault();
+}, { passive: false });
+
   toggleButton.addEventListener("click", () => {
     // On desktop (hover available), behave as normal single click
     if (window.matchMedia("(hover: hover)").matches) {
@@ -34,11 +39,6 @@ function initWebcoreToggle() {
       }
       return;
     }
-
-    // Prevent double-tap zoom on mobile
-      toggleButton.addEventListener("touchend", (e) => {
-        e.preventDefault();
-}, { passive: false });
 
     // On mobile/touch: require double tap
     if (webcoreCSS.disabled) {
