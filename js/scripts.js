@@ -65,7 +65,7 @@ function buildGrid() {
     item.dataset.index = i;
 
     item.innerHTML = `
-      <img src="${p.img}" alt="${p.title}" loading="lazy">
+  <img src="${p.img}" alt="${p.title}" loading="${i < 6 ? "eager" : "lazy"}">
       <div class="item-overlay">
         <div class="item-title">${p.title}</div>
         <div class="item-meta">${p.categories.map((c) => c.charAt(0).toUpperCase() + c.slice(1)).join(" + ")}</div>
