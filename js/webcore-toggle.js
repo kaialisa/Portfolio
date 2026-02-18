@@ -19,53 +19,46 @@ function initWebcoreToggle() {
   } else {
     disableWebcoreMode();
   }
+  let lastTap = 0;
 
-  // Toggle button click handler
-  let mobileTapPending = false;
-  let mobileTapTimer = null;
+  toggleButton.addEventListener("click", () => {
+    const now = Date.now();
 
-  // Prevent double-tap zoom and mobile tap logic
-  let lastTouchEnd = 0;
-
-  toggleButton.addEventListener(
-    "touchend",
-    (e) => {
-      e.preventDefault();
-      lastTouchEnd = Date.now();
-
+    // On touch devices, detect double tap manually
+    if (!window.matchMedia("(hover: hover)").matches) {
       if (webcoreCSS.disabled) {
-        if (!mobileTapPending) {
-          mobileTapPending = true;
-          toggleButton.style.background = "#ff0000";
-          toggleButton.style.color = "#ffffff";
-          mobileTapTimer = setTimeout(() => {
-            mobileTapPending = false;
-            toggleButton.style.background = "";
-            toggleButton.style.color = "";
-          }, 1500);
-        } else {
-          clearTimeout(mobileTapTimer);
-          mobileTapPending = false;
+        if (now - lastTap < 500) {
+          // Double tap — activate
+          lastTap = 0;
           toggleButton.style.background = "";
           toggleButton.style.color = "";
           enableWebcoreMode();
+        } else {
+          // First tap — warn
+          lastTap = now;
+          toggleButton.style.background = "#ff0000";
+          toggleButton.style.color = "#ffffff";
+          setTimeout(() => {
+            if (Date.now() - lastTap >= 500) {
+              toggleButton.style.background = "";
+              toggleButton.style.color = "";
+            }
+          }, 500);
         }
+        return;
       } else {
         disableWebcoreMode();
+        return;
       }
-    },
-    { passive: false },
-  );
+    }
 
-  toggleButton.addEventListener("click", () => {
-    if (Date.now() - lastTouchEnd < 500) return;
+    // Desktop
     if (webcoreCSS.disabled) {
       enableWebcoreMode();
     } else {
       disableWebcoreMode();
     }
   });
-
   function enableWebcoreMode() {
     webcoreCSS.disabled = false;
     localStorage.setItem("webcoreMode", "true");

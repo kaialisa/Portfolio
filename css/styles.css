@@ -869,6 +869,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    touch-action: manipulation;
   }
   .grid-item.wide {
     grid-column: span 2;
