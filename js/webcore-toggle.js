@@ -25,8 +25,11 @@ function initWebcoreToggle() {
   let mobileTapTimer = null;
 
 // Prevent double-tap zoom and mobile tap logic
+let lastTouchEnd = 0;
+
 toggleButton.addEventListener("touchend", (e) => {
   e.preventDefault();
+  lastTouchEnd = Date.now();
 
   if (webcoreCSS.disabled) {
     if (!mobileTapPending) {
@@ -50,9 +53,8 @@ toggleButton.addEventListener("touchend", (e) => {
   }
 }, { passive: false });
 
-// Desktop click handler only
 toggleButton.addEventListener("click", () => {
-  if (!window.matchMedia("(hover: hover)").matches) return;
+  if (Date.now() - lastTouchEnd < 500) return;
   if (webcoreCSS.disabled) {
     enableWebcoreMode();
   } else {
