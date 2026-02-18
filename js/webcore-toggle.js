@@ -24,43 +24,47 @@ function initWebcoreToggle() {
   let mobileTapPending = false;
   let mobileTapTimer = null;
 
-// Prevent double-tap zoom and mobile tap logic
-let lastTouchEnd = 0;
+  // Prevent double-tap zoom and mobile tap logic
+  let lastTouchEnd = 0;
 
-toggleButton.addEventListener("touchend", (e) => {
-  e.preventDefault();
-  lastTouchEnd = Date.now();
+  toggleButton.addEventListener(
+    "touchend",
+    (e) => {
+      e.preventDefault();
+      lastTouchEnd = Date.now();
 
-  if (webcoreCSS.disabled) {
-    if (!mobileTapPending) {
-      mobileTapPending = true;
-      toggleButton.style.background = "#ff0000";
-      toggleButton.style.color = "#ffffff";
-      mobileTapTimer = setTimeout(() => {
-        mobileTapPending = false;
-        toggleButton.style.background = "";
-        toggleButton.style.color = "";
-      }, 1500);
-    } else {
-      clearTimeout(mobileTapTimer);
-      mobileTapPending = false;
-      toggleButton.style.background = "";
-      toggleButton.style.color = "";
+      if (webcoreCSS.disabled) {
+        if (!mobileTapPending) {
+          mobileTapPending = true;
+          toggleButton.style.background = "#ff0000";
+          toggleButton.style.color = "#ffffff";
+          mobileTapTimer = setTimeout(() => {
+            mobileTapPending = false;
+            toggleButton.style.background = "";
+            toggleButton.style.color = "";
+          }, 1500);
+        } else {
+          clearTimeout(mobileTapTimer);
+          mobileTapPending = false;
+          toggleButton.style.background = "";
+          toggleButton.style.color = "";
+          enableWebcoreMode();
+        }
+      } else {
+        disableWebcoreMode();
+      }
+    },
+    { passive: false },
+  );
+
+  toggleButton.addEventListener("click", () => {
+    if (Date.now() - lastTouchEnd < 500) return;
+    if (webcoreCSS.disabled) {
       enableWebcoreMode();
+    } else {
+      disableWebcoreMode();
     }
-  } else {
-    disableWebcoreMode();
-  }
-}, { passive: false });
-
-toggleButton.addEventListener("click", () => {
-  if (Date.now() - lastTouchEnd < 500) return;
-  if (webcoreCSS.disabled) {
-    enableWebcoreMode();
-  } else {
-    disableWebcoreMode();
-  }
-});
+  });
 
   function enableWebcoreMode() {
     webcoreCSS.disabled = false;
