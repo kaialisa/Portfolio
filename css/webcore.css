@@ -316,8 +316,7 @@ nav a.active,  nav button.active,
 .grid-item:hover img { transform: scale(1.02) !important; }
 
 .grid-item h3,
-.grid-item .item-title,
-.grid-item .item-overlay {
+.grid-item .item-title {
   color:          #ffff00 !important;
   font-family:    'PressStart2P', monospace !important;
   font-size:      14px !important;
@@ -359,6 +358,26 @@ nav a.active,  nav button.active,
 @keyframes twinkle-star {
   0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
   50%       { opacity: 0.6; transform: scale(1.2) rotate(180deg); }
+}
+
+/* ── OVERLAY  ── */
+
+/* Desktop: ensure gradient reaches the bottom edge */
+.grid-item .item-overlay {
+  inset: 0 !important;
+  padding-bottom: 14px !important;
+}
+
+/* Mobile: always-visible overlay — remove darkening, keep subtle
+   bottom gradient only for text legibility */
+@media (hover: none) {
+  .item-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(10,10,10,0.72) 0%,
+      transparent 40%
+    ) !important;
+  }
 }
 
 /* ── MODAL ── */
